@@ -1,3 +1,3 @@
 # TwitterQualitativeVisualization
 
-live preview: https://psycorona.shinyapps.io/ReMatriate/
+live preview: <a href="https://psycorona.shinyapps.io/ReMatriate/" target="_blank">https://psycorona.shinyapps.io/ReMatriate/</a> 
