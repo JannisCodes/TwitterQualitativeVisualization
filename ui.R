@@ -18,10 +18,14 @@ library(shinyWidgets)
 #setwd(dirname(rstudioapi::getActiveDocumentContext()$path)) # set working directory
 load("data/data.RData")
 
+# remove.packages("geomnet")
+# install.packages("devtools")
+# devtools::install_github("sctyner/geomnet")
+
 shinyUI(
     dashboardPage(
         title = "ReMatriation Campaign",
-        dashboardHeader(title = "ReMatriate"),
+        dashboardHeader(title=span( icon("fas fa-fist-raised"), "ReMatriate")),
         dashboardSidebar(
             sidebarMenu(
                 menuItem(
@@ -36,6 +40,8 @@ shinyUI(
         dashboardBody(
             tags$script(HTML("$('body').addClass('sidebar-mini');")),
             tags$head(tags$link(rel = "stylesheet", type = "text/css", href = "style.css")),
+            tags$head(tags$link(rel = "shortcut icon", href = "favicon.ico")),
+            tags$style("@import url(https://use.fontawesome.com/releases/v5.13.0/css/all.css);"),
             tags$script(HTML("
                             var openTab = function(tabName){
                               $('a', $('.sidebar')).each(function() {
@@ -58,7 +64,11 @@ shinyUI(
                                 
                                 h4("The Project:"),
                                 #tags$b("The Project:"),
-                                "Hi, I am Januschka Schmidt and this website has been developed as part of my master's thesis project at the ",
+                                "Hi, I am ", 
+                                tags$a(href="https://www.rug.nl/staff/j.schmidt/", 
+                                                    target="_blank",
+                                                    "Januschka Schmidt"), 
+                                " and this website has been developed as part of my master's thesis project at the ",
                                 tags$a(href="https://www.rug.nl", 
                                        target="_blank",
                                        "University of Groningen"),
@@ -81,7 +91,7 @@ shinyUI(
                                        target="_blank",
                                        icon("facebook")),
                                 HTML("&nbsp"),
-                                tags$a(href="https://www.instagram.com/rematriate/", 
+                                tags$a(href="https://www.instagram.com/rematriate_/", 
                                        target="_blank", 
                                        icon("instagram")),
                                 br(),
